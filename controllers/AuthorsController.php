@@ -131,7 +131,7 @@ class AuthorsController extends Controller
         $author = Authors::findOne($author_id);
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $author->getBooks()->orderBy(['publish_year' => 'desc']),
+            'query' => $author->getBooks()->orderBy('publish_year'),
         ]);
 
         return $this->render('books_list', [
